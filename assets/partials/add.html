@@ -1,0 +1,62 @@
+<ion-view title="Add Contact">
+    <ion-nav-bar class="nav-title-slide-ios7 bar-royal">
+        <div class="buttons">
+            <ion-nav-back-button class="button-icon ion-arrow-left-c">
+            </ion-nav-back-button>
+            <h1 class="title">Add Contact</h1>
+            <button class="button button-large button-royal icon-left ion-plus-circled" ng-click="addPeople()">
+                &nbsp;Add {{data.name}}
+            </button>
+        </div>
+    </ion-nav-bar>
+
+    <ion-content>
+    <div class="list card">
+        <label class="item item-icon-left item-floating-label">
+            <span class="input-label" style="opacity: 1">Name</span>
+            <i class="icon ion-person"></i>
+            <input type="text" placeholder="Enter Name" ng-model="data.name">
+        </label>
+        <label class="item item-icon-left item-floating-label">
+            <span class="input-label" style="opacity: 1">Designation</span>
+            <i class="icon ion-briefcase"></i>
+            <input type="text" placeholder="Enter Designation" ng-model="data.designation">
+        </label>
+        <label class="item item-icon-left item-floating-label">
+            <span class="input-label" style="opacity: 1">Sex</span>
+            <!--<i class="icon ion-female"></i><i class="icon ion-male"></i>-->
+            <i class="icon {{data.sex}}"></i>
+            <br>
+            <label class="item item-radio item-icon-left">
+                <input type="radio" name="group" ng-model="data.sex" value="ion-man" ng-checked="isMan()">
+                <div class="item-content">
+                    Male
+                </div>
+                <i class="radio-icon ion-checkmark"></i>
+            </label>
+            <label class="item item-radio">
+                <input type="radio" name="group" ng-model="data.sex" value="ion-woman" ng-checked="isWoman()">
+                <div class="item-content">
+                    Female
+                </div>
+                <i class="radio-icon ion-checkmark"></i>
+            </label>
+        </label>
+        <label class="item item-icon-left item-floating-label">
+            <span class="input-label" style="opacity: 1">Address</span>
+            <i class="icon ion-home"></i>
+            <input type="text" placeholder="Enter Address" ng-model="data.address">
+        </label>
+        <label class="item item-icon-left item-floating-label">
+            <span class="input-label" style="opacity: 1">Contact No.</span>
+            <i class="icon ion-ios7-telephone"></i>
+            <input type="text" placeholder="Enter Contact No." ng-model="data.contact">
+        </label>
+        <label class="item item-icon-left item-floating-label">
+            <span class="input-label" style="opacity: 1">Email Address</span>
+            <i class="icon ion-at"></i>
+            <input type="text" placeholder="Enter Email Address" ng-model="data.email">
+        </label>
+    </div>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,5 @@
+1) Alerts - done
+2) favicon issue - fixed
+3) responsiveness
+4) lazy loading
+5) pull down to refresh - added

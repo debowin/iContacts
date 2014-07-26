@@ -1,0 +1,53 @@
+<ion-view title="View Details">
+    <ion-nav-bar class="nav-title-slide-ios7 bar-royal">
+        <div class="buttons">
+            <ion-nav-back-button class="button-icon ion-arrow-left-c">
+            </ion-nav-back-button>
+            <h1 class="title">View Details</h1>
+            <button class="button button-large button-royal icon-left ion-arrow-left-c" ng-click="goBack()">
+                &nbsp;Go Home
+            </button>
+        </div>
+    </ion-nav-bar>
+
+    <ion-content>
+        <div class="list card">
+            <label class="item item-icon-left item-floating-label">
+                <span class="input-label" style="opacity: 1">Name</span>
+                <i class="icon ion-person"></i>
+                <br>
+                <h3>{{data.name}}</h3>
+            </label>
+            <label class="item item-icon-left item-floating-label">
+                <span class="input-label" style="opacity: 1">Designation</span>
+                <i class="icon ion-briefcase"></i>
+                <br>
+                <h3>{{data.designation}}</h3>
+            </label>
+            <label class="item item-icon-left item-floating-label">
+                <span class="input-label" style="opacity: 1">Sex</span>
+                <!--<i class="icon ion-female"></i><i class="icon ion-male"></i>-->
+                <i class="icon {{data.sex}}"></i>
+                <br>
+            </label>
+            <label class="item item-icon-left item-floating-label">
+                <span class="input-label" style="opacity: 1">Address</span>
+                <i class="icon ion-home"></i>
+                <br>
+                <h3>{{data.address}}</h3>
+            </label>
+            <label class="item item-icon-left item-floating-label">
+                <span class="input-label" style="opacity: 1">Contact No.</span>
+                <i class="icon ion-ios7-telephone"></i>
+                <br>
+                <h3>{{data.contact}}</h3>
+            </label>
+            <label class="item item-icon-left item-floating-label">
+                <span class="input-label" style="opacity: 1">Email Address</span>
+                <i class="icon ion-at"></i>
+                <br>
+                <h3>{{data.email}}</h3>
+            </label>
+        </div>
+    </ion-content>
+</ion-view>

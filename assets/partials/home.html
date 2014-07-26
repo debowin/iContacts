@@ -1,0 +1,36 @@
+<ion-view title="Home">
+    <ion-nav-bar class="nav-title-slide-ios7 bar-royal">
+        <div class="buttons">
+        <ion-nav-back-button class="button-icon ion-arrow-left-c">
+        </ion-nav-back-button>
+        <button class="button button-icon icon ion-android-trash" style="float:left;" ng-click="toggleDelete()">&nbsp;Delete</button>
+        <h1 class="title">Home</h1>
+        <button class="button button-icon icon ion-refresh" style="float:right;" ng-click="toggleReorder()">&nbsp;Reorder</button>
+        </div>
+    </ion-nav-bar>
+    <div class="bar bar-subheader">
+        <label class="item item-input">
+            <i class="icon ion-search placeholder-icon"></i>
+            <input type="text" placeholder="Search contacts..." ng-model="search.name">
+        </label>
+    </div>
+
+    <div id="list" style="margin-top:3%">
+        <ion-content class="padding-top" style="margin-top:4%">
+        <ion-refresher
+            pulling-text="Pull to refresh..."
+            on-refresh="doRefresh()">
+          </ion-refresher>
+            <ion-list show-reorder="data.showReorder" show-delete="data.showDelete">
+                <ion-item class="animate-repeat" ng-repeat="emp in (searchEmp = (employees| filter:search))" href="#/main/show/{{emp.id}}">
+                    <ion-delete-button class="ion-minus-circled" ng-click="confirmDelete(emp)"></ion-delete-button>
+                    <i class="ion-android-contact"></i> {{emp.name}}
+                    <p style="float: right;font-style: italic;color: #c0c0c0">Swipe left to edit...</p>
+                    <ion-option-button name="Edit" class="button-assertive icon ion-edit padding-top" ng-click="goEdit(emp.id)"></ion-option-button>
+                    <ion-reorder-button name="Reorder" class="ion-navicon" on-reorder="moveItem(emp, $fromIndex, $toIndex)"></ion-reorder-button>
+                </ion-item>
+                <ion-item ng-hide="searchEmp.length" class="animate-show"><i class="ion-thumbsdown"></i>&nbsp;Sorry, no one found...</ion-item>
+            </ion-list>
+        </ion-content>
+    </div>
+</ion-view>
